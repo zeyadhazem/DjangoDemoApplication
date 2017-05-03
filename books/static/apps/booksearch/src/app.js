@@ -6,7 +6,7 @@ class App extends React.Component
     render ()
     {
         return (
-            <div>Goodbye World</div>
+            <div>Hello World</div>
         )
     }
 }
