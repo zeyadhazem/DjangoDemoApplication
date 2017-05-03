@@ -21,6 +21,6 @@ export default function (initialState)
         rootReducer,
         initialState,
         applyMiddleware(...middlewares)
-    )
+    );
 }
 
