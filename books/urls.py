@@ -1,3 +1,10 @@
+from books.views.author import AuthorListView
+from books.views.author import AuthorDetailView
+from books.views.book import BookListView
+from books.views.book import BookDetailView
+
+
+
 """books URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -17,5 +24,9 @@ from django.conf.urls import url
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    url(r'^authors/$', AuthorListView.as_view(), name="author-list"),
+    url(r'^authors/(?P<pk>[0-9]+)/$', AuthorDetailView.as_view(), name="author-detail"),
+    url(r'^books/$', BookListView.as_view(), name="book-list"),
+    url(r'^books/(?P<pk>[0-9]+)/$', BookDetailView.as_view(), name="book-detail"),
+    url(r'^admin/', admin.site.urls)
 ]

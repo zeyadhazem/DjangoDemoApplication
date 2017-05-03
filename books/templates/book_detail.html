@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block body %}
+    <h1>{{ content.title }}</h1>
+
+    <p><a href={{ content.author.url }}> {{ content.author.first_name }}, {{ content.author.last_name }} </a></p>
+
+{% endblock %}

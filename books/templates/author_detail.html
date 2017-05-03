@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block body %}
+    <h1>{{ content.last_name }}, {{ content.first_name }}</h1>
+
+    {% for book in content.books %}
+        <p><a href={{ book.url }}> {{ book.title }} </a></p>
+    {% endfor %}
+
+{% endblock %}
