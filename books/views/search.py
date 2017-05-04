@@ -12,7 +12,7 @@ class SearchView(generics.GenericAPIView):
         query = request.GET.get('q', None)
 
         if not query:
-            return response.Response({})
+            return response.Response([])
 
         field_list = ["title_s", "author_s", "first_name_s", "last_name_s", "pk", "type"]
         results = connection.search(query, fl=field_list)
