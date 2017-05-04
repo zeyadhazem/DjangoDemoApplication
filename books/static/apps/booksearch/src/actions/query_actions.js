@@ -28,10 +28,10 @@ export function perfomSearch (query)
     }
 }
 
-export function updateQueryTerm (query) {
+export function updateQueryTerm (query)
+{
     return {
         type: UPDATE_CURRENT_QUERY_TERM,
         query
     }
-
 }

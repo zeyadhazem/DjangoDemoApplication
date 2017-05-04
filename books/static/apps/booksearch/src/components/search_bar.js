@@ -2,10 +2,10 @@
  * Created by zeyadsaleh on 2017-05-03.
  */
 import React from "react";
-import { connect } from "react-redux"
+import { connect } from "react-redux";
 import {
     updateQueryTerm
-} from "../actions/query_actions"
+} from "../actions/query_actions";
 
 
 class SearchBar extends React.Component
@@ -16,13 +16,28 @@ class SearchBar extends React.Component
 
     render()
     {
+        console.log("my query", this.props.myQuery)
+
         return (
             <div>
-                <input type="text" placeholder="Search" onChange={event => this.onInputChange(event)}/>
+                <input type="text"
+                       placeholder="Search"
+                       value={ this.props.myQuery }
+                       onChange={event => this.onInputChange(event)}/>
             </div>
         );
     }
-
 }
 
-export default SearchBar
+function mapStateToProps(state)
+{
+    return {
+        myQuery: state.currentQuery
+    };
+}
+
+const mapDispatchToProps ={
+    updateQueryTerm
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);
