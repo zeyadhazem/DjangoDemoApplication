@@ -12,7 +12,7 @@ export default function results (state = INIIAL_STATE, action)
     switch (action.type)
     {
         case (UPDATE_SEARCH_RESULTS):
-            return [];
+            return action.results;
         default:
             return state;
     }

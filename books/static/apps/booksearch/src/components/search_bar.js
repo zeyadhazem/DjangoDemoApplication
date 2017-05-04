@@ -4,7 +4,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import {
-    updateQueryTerm
+    updateQueryTerm,
+    perfomSearch
 } from "../actions/query_actions";
 
 
@@ -12,6 +13,7 @@ class SearchBar extends React.Component
 {
     onInputChange(event){
         this.props.updateQueryTerm(event.target.value);
+        this.props.perfomSearch(event.target.value);
     }
 
     render()
@@ -37,7 +39,8 @@ function mapStateToProps(state)
 }
 
 const mapDispatchToProps ={
-    updateQueryTerm
+    updateQueryTerm,
+    perfomSearch
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);
