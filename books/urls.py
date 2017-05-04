@@ -23,12 +23,14 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from books.views.search import SearchView
+from books.views.index import IndexView
 
 urlpatterns = [
+    url(r'^$', IndexView.as_view(), name="index"),
     url(r'^authors/$', AuthorListView.as_view(), name="author-list"),
     url(r'^authors/(?P<pk>[0-9]+)/$', AuthorDetailView.as_view(), name="author-detail"),
     url(r'^books/$', BookListView.as_view(), name="book-list"),
     url(r'^books/(?P<pk>[0-9]+)/$', BookDetailView.as_view(), name="book-detail"),
-    url(r'^search', SearchView.as_view(), name="search"),
+    url(r'^search', SearchView.as_view(), name="search-view"),
     url(r'^admin/', admin.site.urls)
 ]
